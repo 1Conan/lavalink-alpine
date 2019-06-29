@@ -1,4 +1,6 @@
 # Lavalink
+![Docker Cloud Automated build](https://img.shields.io/docker/cloud/automated/1conan/lavalink.svg) ![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/1conan/lavalink.svg) ![Docker Pulls](https://img.shields.io/docker/pulls/1conan/lavalink.svg)
+
 
 Dockerfile that uses the alpine linux openjdk image.
 
