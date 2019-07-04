@@ -10,7 +10,7 @@ ENV LAVALINK_VERSION=3.2.1
 # Update system
 RUN apk update && apk update
 
-RUN apk add wget openjdk8-jre-base nss mpg123
+RUN apk add wget openjdk8-jre nss mpg123
 
 RUN wget "https://github.com/Frederikam/Lavalink/releases/download/${LAVALINK_VERSION}/Lavalink.jar" -P /opt/Lavalink
 
