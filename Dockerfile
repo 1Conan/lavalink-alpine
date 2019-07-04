@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM adoptopenjdk/openjdk11:alpine-jre
 
 WORKDIR /opt/Lavalink
 
@@ -8,9 +8,8 @@ ENV LAVALINK_VERSION=3.2.1
 # https://github.com/Frederikam/Laalink/releases/download/3.2.1/Lavalink.jar
 
 # Update system
-RUN apk update && apk update
-
-RUN apk add wget openjdk8-jre nss mpg123
+RUN apk update
+RUN apk add wget nss mpg123
 
 RUN wget "https://github.com/Frederikam/Lavalink/releases/download/${LAVALINK_VERSION}/Lavalink.jar" -P /opt/Lavalink
 
