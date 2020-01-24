@@ -10,8 +10,8 @@ RUN apk update
 RUN apk add wget nss mpg123
 
 # Run as non-root user
-RUN groupadd -g 322 lavalink && \
-    useradd -r -u 322 -g lavalink lavalink
+RUN addgroup -g 322 lavalink && \
+    adduser -S -u 322 -G lavalink lavalink
 USER lavalink
 
 WORKDIR /opt/Lavalink
