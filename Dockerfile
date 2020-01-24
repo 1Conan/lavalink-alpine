@@ -2,7 +2,7 @@ FROM adoptopenjdk/openjdk11:alpine-jre
 
 VOLUME /config
 
-ENV LAVALINK_VERSION=3.3
+ENV LAVALINK_VERSION=3.2.2
 # https://github.com/Frederikam/Laalink/releases/download/3.2.1/Lavalink.jar
 
 # Update system
