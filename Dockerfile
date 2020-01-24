@@ -12,9 +12,12 @@ RUN apk add wget nss mpg123
 # Run as non-root user
 RUN addgroup -g 322 lavalink && \
     adduser -S -u 322 -G lavalink lavalink
-USER lavalink
 
 WORKDIR /opt/Lavalink
+
+RUN chown lavalink:lavalink /opt/Lavalink
+
+USER lavalink
 
 RUN wget "https://github.com/Frederikam/Lavalink/releases/download/${LAVALINK_VERSION}/Lavalink.jar" -P /opt/Lavalink
 
