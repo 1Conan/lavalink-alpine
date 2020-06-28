@@ -1,13 +1,12 @@
-FROM adoptopenjdk/openjdk11:alpine-jre
+FROM adoptopenjdk/openjdk14:alpine-jre
 
 VOLUME /config
 
-ENV LAVALINK_VERSION=3.2.2
-# https://github.com/Frederikam/Laalink/releases/download/3.2.1/Lavalink.jar
+ENV LAVALINK_VERSION=3.3.1
 
 # Update system
-RUN apk update
-RUN apk add wget nss mpg123
+RUN apk update --no-cache
+RUN apk add --no-cache wget ca-certificates nss mpg123
 
 # Run as non-root user
 RUN addgroup -g 322 lavalink && \
@@ -22,6 +21,10 @@ USER lavalink
 RUN wget "https://github.com/Frederikam/Lavalink/releases/download/${LAVALINK_VERSION}/Lavalink.jar" -P /opt/Lavalink
 
 RUN ln -s /config/application.yml /opt/Lavalink/application.yml
+
+USER root
+
+RUN apk del wget ca-certificates
 
 EXPOSE 2333
 
